@@ -11,8 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('book_user_state', function (Blueprint $table) {
-            $table->id();
+        Schema::create('booklists', function (Blueprint $table) {
+            $table->id()->autoIncrement();
+            $table->string('list_name');
+            $table->unsignedBigInteger('client_id');
             $table->timestamps();
         });
     }
@@ -22,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('book_user_state');
+        Schema::dropIfExists('booklists');
     }
 };
