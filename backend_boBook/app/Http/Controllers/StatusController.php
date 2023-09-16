@@ -12,15 +12,9 @@ class StatusController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        $status = Status::all();
+        //convertir a json para la api
+        return response()->json($status);
     }
 
     /**
@@ -28,7 +22,14 @@ class StatusController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $status = new Status;
+        $status->status_name = $request->status_name;
+        $status->save();
+        $data = [
+            'message' => 'Status created successfully',
+            'status' => $status
+        ];
+        return response()->json($data);
     }
 
     /**
@@ -36,15 +37,8 @@ class StatusController extends Controller
      */
     public function show(Status $status)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Status $status)
-    {
-        //
+    
+        return response()->json($status);
     }
 
     /**
@@ -52,7 +46,13 @@ class StatusController extends Controller
      */
     public function update(Request $request, Status $status)
     {
-        //
+        $status->status_name = $request->status_name;
+        $status->save();
+        $data = [
+            'message' => 'Status updated successfully',
+            'status' => $status
+        ];
+        return response()->json($data);
     }
 
     /**
@@ -60,6 +60,12 @@ class StatusController extends Controller
      */
     public function destroy(Status $status)
     {
-        //
+        $status->delete();
+        $data = [
+            'message' => 'Status deleted successfully',
+            'Status' => $status
+        ];
+        
+        return response()->json($data);
     }
 }

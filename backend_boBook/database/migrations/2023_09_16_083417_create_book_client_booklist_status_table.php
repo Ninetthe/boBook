@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('booklists_books_clients_statuses', function (Blueprint $table) {
+        Schema::create('book_client_booklist_status', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->unsignedBigInteger('booklist_id');
             $table->foreign('booklist_id')->references('id')->on('booklists');
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('booklists_books_clients_statuses');
+        Schema::dropIfExists('book_client_booklist_status');
     }
 };

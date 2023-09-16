@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('authors');
             $table->string('publisher');
             $table->date('published_date');
+            // $published_date = date("Y-m-d", now());
             $table->text('description');
             $table->integer('pages');
             $table->string('categories');

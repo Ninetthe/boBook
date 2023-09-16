@@ -22,3 +22,19 @@ Route::post('/clients', 'App\Http\Controllers\ClientController@store');
 Route::get('/clients/{client}', 'App\Http\Controllers\ClientController@show');
 Route::put('/clients/{client}', 'App\Http\Controllers\ClientController@update');
 Route::delete('/clients/{client}', 'App\Http\Controllers\ClientController@destroy');
+
+
+Route::group(['prefix' => 'books'], function () {
+    Route::get('/', 'App\Http\Controllers\BookController@index');
+    Route::post('/', 'App\Http\Controllers\BookController@store');
+    Route::get('/{book}', 'App\Http\Controllers\BookController@show');
+    Route::put('/{book}', 'App\Http\Controllers\BookController@update');
+    Route::delete('/{book}', 'App\Http\Controllers\BookController@destroy');
+});
+Route::group(['prefix' => 'booklists'], function () {
+    Route::get('/', 'App\Http\Controllers\BooklistController@index');
+    Route::post('/', 'App\Http\Controllers\BooklistController@store');
+    Route::get('/{booklist}', 'App\Http\Controllers\BooklistController@show');
+    Route::put('/{booklist}', 'App\Http\Controllers\BooklistController@update');
+    Route::delete('/{booklist}', 'App\Http\Controllers\BooklistController@destroy');
+});

@@ -12,7 +12,8 @@ class BooklistController extends Controller
      */
     public function index()
     {
-        //
+        $booklist = Booklist::width('user')->get();
+        return response()->json($booklist);
     }
 
     /**
@@ -28,7 +29,17 @@ class BooklistController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $booklist = new Booklist;
+        $booklist->list_name = $request->list_name;
+        $booklist->client_id = $request->client_id;
+        $booklist->save();
+        $data = [
+            'message' => 'Booklist created successfully',
+            'booklist' => $booklist
+        ];
+        
+        return response()->json($data);
+
     }
 
     /**
@@ -36,7 +47,7 @@ class BooklistController extends Controller
      */
     public function show(Booklist $booklist)
     {
-        //
+        return response()->json($booklist);
     }
 
     /**
@@ -52,7 +63,15 @@ class BooklistController extends Controller
      */
     public function update(Request $request, Booklist $booklist)
     {
-        //
+        $booklist->list_name = $request->list_name;
+        $booklist->client_id = $request->client_id;
+        $booklist->save();
+        $data = [
+            'message' => 'Booklist updated successfully',
+            'booklist' => $booklist
+        ];
+
+        return response()->json($data);
     }
 
     /**
@@ -60,6 +79,12 @@ class BooklistController extends Controller
      */
     public function destroy(Booklist $booklist)
     {
-        //
+        $booklist->delete();
+        $data = [
+            'message' => 'Booklist deleted successfully',
+            'booklist' => $booklist
+        ];
+
+        return response()->json($data);
     }
 }
