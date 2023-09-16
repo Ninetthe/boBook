@@ -12,7 +12,9 @@ class ClientController extends Controller
      */
     public function index()
     {
-        //
+        $clients = Client::all();
+        //convertir a json para la api
+        return response()->json($clients);
     }
 
     /**
@@ -28,7 +30,19 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $client = new Client;
+        $client->name = $request->name;
+        $client->lastname = $request->lastname;
+        $client->email = $request->email;
+        $client->password = $request->password;
+        $client->phone = $request->phone;
+        $client->picture = $request->picture;
+        $client->save();
+        $data = [
+            'message' => 'Client created successfully',
+            'client' => $client
+        ];
+        return response()->json($data);
     }
 
     /**
@@ -36,7 +50,8 @@ class ClientController extends Controller
      */
     public function show(Client $client)
     {
-        //
+    
+        return response()->json($client);
     }
 
     /**
@@ -52,7 +67,18 @@ class ClientController extends Controller
      */
     public function update(Request $request, Client $client)
     {
-        //
+        $client->name = $request->name;
+        $client->lastname = $request->lastname;
+        $client->email = $request->email;
+        $client->password = $request->password;
+        $client->phone = $request->phone;
+        $client->picture = $request->picture;
+        $client->save();
+        $data = [
+            'message' => 'Client updated successfully',
+            'client' => $client
+        ];
+        return response()->json($data);
     }
 
     /**
@@ -60,6 +86,12 @@ class ClientController extends Controller
      */
     public function destroy(Client $client)
     {
-        //
+        $client->delete();
+        $data = [
+            'message' => 'Client deleted successfully',
+            'client' => $client
+        ];
+        
+        return response()->json($data);
     }
 }

@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('booklists_books_clients_statuses', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->unsignedBigInteger('booklist_id');
             $table->foreign('booklist_id')->references('id')->on('booklists');
             $table->unsignedBigInteger('book_id');
