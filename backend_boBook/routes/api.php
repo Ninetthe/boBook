@@ -2,7 +2,6 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,13 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/clients', 'App\Http\Controllers\ClientController@index');
-Route::post('/clients', 'App\Http\Controllers\ClientController@store');
-Route::get('/clients/{client}', 'App\Http\Controllers\ClientController@show');
-Route::put('/clients/{client}', 'App\Http\Controllers\ClientController@update');
-Route::delete('/clients/{client}', 'App\Http\Controllers\ClientController@destroy');
-
-
+Route::group(['prefix' => 'clients'], function () {
+Route::get('/', 'App\Http\Controllers\ClientController@index');
+Route::post('/', 'App\Http\Controllers\ClientController@store');
+Route::get('/{client}', 'App\Http\Controllers\ClientController@show');
+Route::put('/{client}', 'App\Http\Controllers\ClientController@update');
+Route::delete('/{client}', 'App\Http\Controllers\ClientController@destroy');
+});
 Route::group(['prefix' => 'books'], function () {
     Route::get('/', 'App\Http\Controllers\BookController@index');
     Route::post('/', 'App\Http\Controllers\BookController@store');
@@ -37,4 +36,11 @@ Route::group(['prefix' => 'booklists'], function () {
     Route::get('/{booklist}', 'App\Http\Controllers\BooklistController@show');
     Route::put('/{booklist}', 'App\Http\Controllers\BooklistController@update');
     Route::delete('/{booklist}', 'App\Http\Controllers\BooklistController@destroy');
+});
+Route::group(['prefix' => 'statuses'], function () {
+    Route::get('/', 'App\Http\Controllers\StatusController@index');
+    Route::post('/', 'App\Http\Controllers\StatusController@store');
+    Route::get('/{status}', 'App\Http\Controllers\StatusController@show');
+    Route::put('/{status}', 'App\Http\Controllers\StatusController@update');
+    Route::delete('/{status}', 'App\Http\Controllers\StatusController@destroy');
 });
