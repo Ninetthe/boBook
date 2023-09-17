@@ -44,3 +44,10 @@ Route::group(['prefix' => 'statuses'], function () {
     Route::put('/{status}', 'App\Http\Controllers\StatusController@update');
     Route::delete('/{status}', 'App\Http\Controllers\StatusController@destroy');
 });
+
+Route::get('/users', 'App\Http\Controllers\UserController@index');
+Route::post('/users', 'App\Http\Controllers\UserController@store');
+Route::get('/users/{user}', 'App\Http\Controllers\UserController@show');
+Route::put('/users/{user}', 'App\Http\Controllers\UserController@update');
+Route::delete('/users/{user}', 'App\Http\Controllers\UserController@destroy');
+
