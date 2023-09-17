@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('booklists', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->string('list_name');
-            $table->unsignedBigInteger('client_id');
-            $table->foreign('client_id')->references('id')->on('clients');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

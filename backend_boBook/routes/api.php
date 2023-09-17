@@ -16,13 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::group(['prefix' => 'clients'], function () {
-Route::get('/', 'App\Http\Controllers\ClientController@index');
-Route::post('/', 'App\Http\Controllers\ClientController@store');
-Route::get('/{client}', 'App\Http\Controllers\ClientController@show');
-Route::put('/{client}', 'App\Http\Controllers\ClientController@update');
-Route::delete('/{client}', 'App\Http\Controllers\ClientController@destroy');
-});
+
 Route::group(['prefix' => 'books'], function () {
     Route::get('/', 'App\Http\Controllers\BookController@index');
     Route::post('/', 'App\Http\Controllers\BookController@store');
@@ -45,9 +39,10 @@ Route::group(['prefix' => 'statuses'], function () {
     Route::delete('/{status}', 'App\Http\Controllers\StatusController@destroy');
 });
 
-Route::get('/users', 'App\Http\Controllers\UserController@index');
-Route::post('/users', 'App\Http\Controllers\UserController@store');
-Route::get('/users/{user}', 'App\Http\Controllers\UserController@show');
-Route::put('/users/{user}', 'App\Http\Controllers\UserController@update');
-Route::delete('/users/{user}', 'App\Http\Controllers\UserController@destroy');
-
+Route::group(['prefix' => 'users'], function () {
+Route::get('/', 'App\Http\Controllers\UserController@index');
+Route::post('/', 'App\Http\Controllers\UserController@store');
+Route::get('/{user}', 'App\Http\Controllers\UserController@show');
+Route::put('/{user}', 'App\Http\Controllers\UserController@update');
+Route::delete('/{user}', 'App\Http\Controllers\UserController@destroy');
+});

@@ -10,9 +10,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Booklist extends Model
 {
     use HasFactory;
-    public function clients(): BelongsTo
+    public function users(): BelongsTo
     {
-        return $this->belongsTo(Client::class);
+        return $this->belongsTo(User::class);
     }
     public function books(): BelongsToMany
     {
