@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -45,13 +46,19 @@ class User extends Authenticatable
     ];
 
     use HasFactory;
-    public function booklists(): HasMany
+    public function booklists(): BelongsToMany
     {
-        return $this->hasMany(Booklist::class);
+        // return $this->hasMany(Booklist::class);
+        return $this->belongsToMany(Booklist::class, 'book_booklist_status_user', 'user_id', 'booklist_id')
+        ->withPivot('status_id', 'book_id');
     }
-    public function books(): HasMany
+    public function books(): BelongsToMany
     {
-        return $this->hasMany(Book::class);
+    return $this->belongsToMany(Book::class, 'book_booklist_status_user', 'user_id', 'book_id')
+        ->withPivot('status_id', 'booklist_id');
+
+        // return $this->hasMany(Book::class);
+        // return $this->hasMany(Book::class, 'book_booklist_status_user');
     }
     
 }
