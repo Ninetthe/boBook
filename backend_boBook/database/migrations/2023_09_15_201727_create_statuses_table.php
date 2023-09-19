@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('book_user_state', function (Blueprint $table) {
-            $table->id();
+        Schema::create('statuses', function (Blueprint $table) {
+            $table->id()->autoIncrement();
+            $table->string('status_name');
             $table->timestamps();
         });
     }
@@ -22,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('book_user_state');
+        Schema::dropIfExists('statuses');
     }
 };

@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('books_lists', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedBigInteger('id_user');
-            $table->unsignedBigInteger('id_book');
-            $table->unsignedBigInteger('id_note');
-            $table->integer('rating')->nullable();
+        Schema::create('booklists', function (Blueprint $table) {
+            $table->id()->autoIncrement();
+            $table->string('list_name');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('books_lists');
+        Schema::dropIfExists('booklists');
     }
 };
