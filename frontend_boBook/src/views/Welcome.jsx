@@ -1,6 +1,6 @@
-import React from 'react'
+
 import Button from '../components/atoms/buttons/Button'
-import "../atoms/buttons/button.css"
+import "../components/atoms/buttons/button.css"
 import "./welcome.css"
 function Welcome() {
 return (
