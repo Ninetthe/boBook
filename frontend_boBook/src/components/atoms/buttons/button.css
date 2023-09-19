@@ -1,0 +1,29 @@
+.bttnGreen {
+    width: 23rem;
+    height: 4.5rem;
+    background-color: #2D6A4F;
+    font-family:sans-serif;
+    color: #f8f8f8;
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 10px;
+}
+.bttnGreenMedium {
+    width: 17.5rem;
+    height: 4.5rem;
+    color: #2D6A4F;
+    font-size: 1.5rem;
+    font-family: Poppins;
+    border-radius: 10px;
+}
+.bttnWhite {
+    width: 23rem;
+    height: 4.5rem;
+    color: #f8f8f8;
+    font-family: Poppins;
+    font-style: #2d6a4f;
+    text-align: center;
+    font-size: 1.5rem;
+    border: #2D6A4F;
+    border-radius: 10px;
+}
