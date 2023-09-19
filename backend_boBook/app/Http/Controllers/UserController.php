@@ -10,7 +10,7 @@ class UserController extends Controller
 {
     public function index():JsonResponse
     {
-        $user = User::with(['books.booklists.statuses.pivot'])->get();
+        $user = User::with(['booklists'])->get();
         // $user = User::with(['booklists.books.statuses.pivot'])->get();
         return response()->json($user, 200);
         

@@ -12,7 +12,7 @@ class BooklistController extends Controller
      */
     public function index()
     {
-        $booklist = Booklist::all();
+        $booklist = Booklist::with('user')->get();
         return response()->json($booklist);
     }
 

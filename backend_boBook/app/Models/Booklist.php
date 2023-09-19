@@ -11,20 +11,14 @@ class Booklist extends Model
 {
     use HasFactory;
 
-    public function users(): BelongsToMany
+    public function users(): BelongsTo
     {
-        return $this->belongsToMany(User::class, 'book_booklist_status_user', 'booklist_id', 'user_id')
-            ->withPivot('status_id', 'book_id');
+        return $this->belongsTo(User::class);
     }
 
     public function books(): BelongsToMany
     {
-        return $this->belongsToMany(Book::class, 'book_booklist_status_user', 'booklist_id', 'book_id')
-            ->withPivot('status_id', 'user_id');
+        return $this->belongsToMany(Book::class, 'book_booklist_status_user');
     }
 
-    public function statuses(): BelongsTo
-    {
-        return $this->belongsTo(Status::class);
-    }
 }

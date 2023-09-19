@@ -46,16 +46,14 @@ class User extends Authenticatable
     ];
 
     use HasFactory;
-    public function booklists(): BelongsToMany
+    public function booklists(): HasMany
     {
         // return $this->hasMany(Booklist::class);
-        return $this->belongsToMany(Booklist::class, 'book_booklist_status_user', 'user_id', 'booklist_id')
-        ->withPivot('status_id', 'book_id');
+        return $this->hasMany(Booklist::class);
     }
-    public function books(): BelongsToMany
+    public function books(): HasMany
     {
-    return $this->belongsToMany(Book::class, 'book_booklist_status_user', 'user_id', 'book_id')
-        ->withPivot('status_id', 'booklist_id');
+    return $this->hasMany(Book::class);
 
         // return $this->hasMany(Book::class);
         // return $this->hasMany(Book::class, 'book_booklist_status_user');

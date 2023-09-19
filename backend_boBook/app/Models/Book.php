@@ -10,10 +10,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Book extends Model
 {
     use HasFactory;
-    public function users(): BelongsToMany
+    public function users(): BelongsTo
     {
         // return $this->belongsTo(User::class);
-        return $this->belongsToMany(User::class, 'book_booklist_status_user');
+        return $this->belongsToM(User::class);
     }
     public function booklists(): BelongsToMany
     {
@@ -22,8 +22,8 @@ class Book extends Model
         // return $this->belongsToMany(Booklist::class, 'book_booklist_status_user', 'book_id', 'booklist_id')
         // ->withPivot('status_id', 'user_id');
     }
-    // public function statuses(): BelongsToMany
-    // {
-    //     return $this->belongsToMany(Status::class);
-    // }
+    public function statuses(): BelongsToMany
+    {
+        return $this->belongsToMany(Status::class, 'book_booklist_status_user');
+    }
 }
