@@ -7,31 +7,17 @@ use Illuminate\Http\Request;
 
 class BooklistController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        $booklist = Booklist::with('user')->get();
+        $booklist = Booklist::with('books.statuses')->get();
         return response()->json($booklist);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $booklist = new Booklist;
         $booklist->list_name = $request->list_name;
-        $booklist->client_id = $request->client_id;
+        $booklist->user_id = $request->user_id;
         $booklist->save();
         $data = [
             'message' => 'Booklist created successfully',
@@ -41,30 +27,16 @@ class BooklistController extends Controller
         return response()->json($data);
 
     }
-
-    /**
-     * Display the specified resource.
-     */
     public function show(Booklist $booklist)
     {
+        $booklist->load(['books.statuses']);
         return response()->json($booklist);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Booklist $booklist)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Booklist $booklist)
     {
         $booklist->list_name = $request->list_name;
-        $booklist->client_id = $request->client_id;
+        $booklist->user_id = $request->user_id;
         $booklist->save();
         $data = [
             'message' => 'Booklist updated successfully',
@@ -73,10 +45,6 @@ class BooklistController extends Controller
 
         return response()->json($data);
     }
-
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Booklist $booklist)
     {
         $booklist->delete();

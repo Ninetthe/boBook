@@ -10,8 +10,7 @@ class UserController extends Controller
 {
     public function index():JsonResponse
     {
-        $user = User::with(['booklists'])->get();
-        // $user = User::with(['booklists.books.statuses.pivot'])->get();
+        $user = User::with(['booklists.books.statuses'])->get();
         return response()->json($user, 200);
         
     }
@@ -35,7 +34,7 @@ class UserController extends Controller
 
     public function show(User $user)
     {
-        // $user->load(['booklists.books.statuses']);
+        $user->load(['booklists.books.statuses']);
         return response()->json($user);
     }
 
@@ -65,48 +64,6 @@ class UserController extends Controller
         
         return response()->json($data);
     }
-    // public function booklists($statusId = null)
-    // {
-    //     $booklists = [];
-    //     foreach ($booklists as $booklist) {
-    //         $booklists[] = [
-    //             'id' => $booklist->id,
-    //             'name' => $booklist->name,
-    //             'books' => $booklist->books()->where('status_id', $statusId)->get()
-    //         ];
-    //     }
-    //     return $booklists;
-    // }
-
 }
-
-
-// public function index()
-// {
-//     $clients = Client::with(['booklists.books.statuses'])->get();
-//     return response()->json($clients);
-// }
-
-
-    // {
-    //     $client->load(['booklists.books.statuses']);
-    //     return response()->json($client);
-    // }
-
-
-    // public function booklists($statusId = null)
-    // {
-    //     $booklists = [];
-    //     foreach ($booklists as $booklist) {
-    //         $booklists[] = [
-    //             'id' => $booklist->id,
-    //             'name' => $booklist->name,
-    //             'books' => $booklist->books()->where('status_id', $statusId)->get()
-    //         ];
-    //     }
-
-    //     return $booklists;
-    // }
-
 
 
