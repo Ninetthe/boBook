@@ -1,15 +1,25 @@
 import React from 'react'
-import bookmark from "../../../assets/images/bookmark.svg"
 import "./logo.css"
+import bookmark from "../../../assets/images/bookmark.svg"
+
+
 
 export default function Logo() {
   return (
-    <div className='Logo'>
-      <img className='imgLogo' src={bookmark} alt="bookmark" />
-      <div>
-        <p className="paragraphLogo"></p>
-        <h2 className="h2Logo"></h2>
+    <div className='LogoContainer'>
+      <div className='Logo'>
+        <img className='imgLogo' src={bookmark}/>
       </div>
+      <div className="textContainerLogo">
+        <p className="paragraphLogo">
+          Enjoy the Story
+        </p>
+        <h2 className="h2Logo">
+          boBook
+        </h2>
+      </div>
+
+
     </div>
   )
 }
