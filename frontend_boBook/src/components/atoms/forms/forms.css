@@ -1,0 +1,27 @@
+.styleFormsInput {
+    width: 100%;
+    height: 2rem;
+    color: #081C15;
+    font-family: 'Poppins', sans-serif;
+    font-style: #2d6a4f;
+    text-align: center;
+    font-size: 1.5rem;
+    border: solid #2D6A4F;
+    border-radius: 1rem;
+    text-align: left;
+
+}
+.styleFormsLabel{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    color: #081C15;
+    text-align: left;
+    width: 100%;
+}
+.containerForm{
+    padding-left: 3%;
+    width: 100%;
+    margin: auto;
+    text-align: left;
+}
+

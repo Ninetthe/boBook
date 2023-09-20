@@ -1,6 +1,7 @@
 
 import './App.css'
-import Welcome from './views/Welcome'
+import Welcome from './views/welcome/Welcome'
+import RouterItem from './configuration/Router'
 
 
 function App() {
@@ -9,8 +10,7 @@ function App() {
 
   return (
     <>
- 
-    <Welcome></Welcome>
+<RouterItem></RouterItem>
 
     
     </>
