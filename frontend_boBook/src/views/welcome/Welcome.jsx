@@ -15,8 +15,8 @@ return (
             <Logo></Logo>
         </div>
         <div>
-            <Button styleButton="bttnGreen"  texButton="Sign In"/>
-            <Button styleButton="bttnGreen"  texButton="Sign Up"/>
+            <a href="/login"><Button styleButton="bttnGreen"  texButton="Sign In"/></a>
+            <a href="/register">  <Button styleButton="bttnGreen"  texButton="Sign Up"/></a>
         </div>
     </div>
 )

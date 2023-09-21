@@ -6,7 +6,8 @@
     color: #f8f8f8;
     text-align: center;
     font-size: 1.5rem;
-    border-radius: 10px;
+    border-radius: 1rem;
+    text-decoration: none;
 }
 .bttnGreenMedium {
     width: 50%;
@@ -14,12 +15,12 @@
     background-color: #2D6A4F;
     font-size: 1.5rem;
     font-family: 'Poppins', sans-serif;
-    border-radius: 10px;
+    border-radius: 1rem;
     color: #f8f8f8;
 }
 .bttnWhite {
     width: 90%;
-    height: 2rem;
+    height: 2.5rem;
     color: #081C15;
     font-family: 'Poppins', sans-serif;
     font-style: #2d6a4f;

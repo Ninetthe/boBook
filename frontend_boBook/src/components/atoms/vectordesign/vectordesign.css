@@ -15,6 +15,24 @@
     width: 400%;
     height: 400%;
     overflow: hidden;
-
-    /* overflow: hidden; */
 }
+/*tablet*/
+@media (min-width: 800px) {
+    .firstRounded{
+        width: 200% ;
+        height: 200%;
+    }
+    .containerVectors{
+        width: 110%;
+        height: 110%;
+        margin-top: -35%;
+    }   
+}
+/*destop*/
+@media (min-width: 1200px) {
+    .containerVectors{
+        display: none;
+    
+    }
+    
+    }   
