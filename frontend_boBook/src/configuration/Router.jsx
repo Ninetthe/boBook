@@ -11,6 +11,7 @@ export default function RouterItem() {
                 <Route path='/' element={<Welcome/>}></Route>
                 <Route path='/login' element={<LogIn/>}></Route>
                 <Route path='/register' element={<Register/>}></Route>
+                <Route path='/home' element={<Register/>}></Route>
 
             </Route>
         </Routes>

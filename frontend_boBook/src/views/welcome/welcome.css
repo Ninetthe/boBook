@@ -11,10 +11,16 @@
     background-color: #f8f8f8;
 }
 .LogoWelcome {
-    margin-top: 20%
+    margin-top: 20%;
 }
 
-@media (min-width: 800px) {
+@media  (min-width: 800px) {
 
-    
 }
+@media (min-width: 1000px) {
+    .welcomeContainer {
+        max-width: 50%;
+        margin: auto;
+    }
+}
+

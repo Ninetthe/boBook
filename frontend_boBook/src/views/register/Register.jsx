@@ -5,6 +5,9 @@ import './register.css'
 export default function Register() {
   return (
     <div className='signUpContainer'>
+  
+
+     
      <a className='textDecoration' href="/"><img className='arrow' src={arrow} alt="arrow" /></a>
      <h2 className='h2Logo'>SIGN UP</h2>
      <div className=''>
@@ -20,10 +23,12 @@ export default function Register() {
             <label className="styleFormsLabel">Phone</label><br />
             <input className="styleFormsInput" type="text" name="" id="" placeholder='Write phone'/><br />
             <label className="styleFormsLabel">Photo</label><br />
-            <input className="styleFormsInput" type="text" name="" id="" placeholder='Add photo'/><br /> <br />
+            <input className="styleFormsInput" type="file" name="" id="" placeholder='Add photo'/><br /> <br />
             <input className="bttnGreenMedium " type="submit" value="Sign Up" name="" id="" />
         </form>
         </div>
+
+
     </div>
   )
 }
