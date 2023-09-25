@@ -17,6 +17,12 @@
 
 
 
-export default function DynamicUrl(extension) {
-    return `http://127.0.0.1:8000/api/${extension}`
-}
+export default function DynamicUrl(endpoint) {
+    const baseUrl = "http://127.0.0.1:8000/";
+  
+    // Concatena el endpoint a la URL base
+    const url = baseUrl + endpoint;
+  
+    return url;
+  }
+  

@@ -3,11 +3,13 @@ import arrow from '../../assets/images/arrowleft.svg'
 import './register.css'
 
 export default function Register() {
+
+    
+
+
+
   return (
     <div className='signUpContainer'>
-  
-
-     
      <a className='textDecoration' href="/"><img className='arrow' src={arrow} alt="arrow" /></a>
      <h2 className='h2Logo'>SIGN UP</h2>
      <div className=''>
@@ -27,8 +29,6 @@ export default function Register() {
             <input className="bttnGreenMedium " type="submit" value="Sign Up" name="" id="" />
         </form>
         </div>
-
-
     </div>
   )
 }
