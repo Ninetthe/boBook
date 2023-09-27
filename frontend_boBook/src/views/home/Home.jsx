@@ -49,13 +49,13 @@ export default function Home() {
        {user?.map((user)=>(
         <li key={user.id}>{user.name}</li>
         ))}
-
+{/* <li key={user[1].id}>{user[].name}</li> */}
         </ul>
       </h3>
 
       <Navbar />
 
-      Bienvenido al Home
+     
     </div>
   )
 }
