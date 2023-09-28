@@ -1,16 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
+import Welcome from './views/welcome/Welcome'
+import RouterItem from './configuration/Router'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+
+
 
   return (
     <>
+<RouterItem></RouterItem>
+
     
     </>
+    
   )
 }
+
 
 export default App

@@ -1,0 +1,36 @@
+.logInContainer {
+    max-width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f8f8f8;
+}
+.styleParagraphLogin{
+    font-size: 1.2rem;
+}
+.enlaceRegister{
+    font-size: 1.2rem;
+    color: #081C15;
+    padding-left: 0.5rem;
+    text-decoration: none;
+    font-weight:bold;
+} 
+.resetPassword{
+    text-decoration: none;
+}
+
+
+
+@media (min-width: 1000px) {
+    .logInContainer{
+        margin-top: 0;
+        max-width: 50%;
+        margin: auto;
+    }
+    .LogoWelcome{
+        margin-top: 15%;
+    }
+}

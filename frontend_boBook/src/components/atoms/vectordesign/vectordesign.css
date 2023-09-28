@@ -1,0 +1,38 @@
+.containerVectors{
+    display: flex;
+    height: 120%;
+    width: 120%;
+    overflow: hidden;
+    margin-top: -30%;
+    margin-left: -5%;
+    transform: rotate(15deg);
+}
+.firstRounded
+{
+    display: flex;
+    background-color: #2D6A4F;
+    border-radius: 50%;
+    width: 400%;
+    height: 400%;
+    overflow: hidden;
+}
+/*tablet*/
+@media (min-width: 800px) {
+    .firstRounded{
+        width: 200% ;
+        height: 200%;
+    }
+    .containerVectors{
+        width: 110%;
+        height: 110%;
+        margin-top: -35%;
+    }   
+}
+/*destop*/
+@media (min-width: 1000px) {
+    .containerVectors{
+        display: none;
+    
+    }
+    
+    }   

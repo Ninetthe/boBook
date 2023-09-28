@@ -1,0 +1,26 @@
+
+.welcomeContainer{
+    max-width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f8f8f8;
+}
+.LogoWelcome {
+    margin-top: 20%;
+}
+
+@media  (min-width: 800px) {
+
+}
+@media (min-width: 1000px) {
+    .welcomeContainer {
+        max-width: 50%;
+        margin: auto;
+    }
+}
+
